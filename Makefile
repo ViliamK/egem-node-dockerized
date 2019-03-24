@@ -1,9 +1,7 @@
 image: build
 
 env:
-	$(eval DOC_GIT_REF=$(shell git rev-parse --short HEAD))
-	@cd go-egem; $(eval EGEM_GIT_REF=$(shell git rev-parse --short HEAD))
-	$(eval GIT_REF=$(shell echo ${DOC_GIT_REF})$(shell echo ${EGEM_GIT_REF}))
+	$(eval GIT_REF=$(shell git rev-parse --short HEAD))
 
 build: env
 	@echo building ethergem:${GIT_REF}
